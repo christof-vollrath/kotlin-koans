@@ -12,5 +12,7 @@ fun Shop.getCustomerWithMaximumNumberOfOrders(): Customer? =
 
 fun Customer.getMostExpensiveOrderedProduct(): Product? =
     // Return the most expensive product which has been ordered
-    orders.maxBy { it.products.maxBy { it.price }.price }
+    orders.flatMap { it.products }.maxBy { it.price }
 
+fun Order.getMostExpensiveProduct(): Product? =
+        products.maxBy { it.price }

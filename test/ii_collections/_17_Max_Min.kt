@@ -12,4 +12,8 @@ class _17_Max_Min {
     @Test fun testTheMostExpensiveOrderedProduct() {
         assertEquals(rubyMine, customers[nathan]!!.getMostExpensiveOrderedProduct())
     }
+
+    @Test fun testTheMostExpensiveProduct() {
+        assertEquals(rubyMine, customers[nathan]!!.orders.first().getMostExpensiveProduct())
+    }
 }
