@@ -14,11 +14,26 @@ class _26_In_Range {
         doTest(MyDate(2014, 3, 22), MyDate(2014, 1, 1), MyDate(2015, 1, 1), shouldBeInRange = true)
     }
 
+    @Test fun testInRange1() {
+        doTest(MyDate(2014, 1, 1), MyDate(2014, 1, 1), MyDate(2015, 1, 1), shouldBeInRange = true)
+    }
+
+    @Test fun testInRange2() {
+        doTest(MyDate(2015, 1, 1), MyDate(2014, 1, 1), MyDate(2015, 1, 1), shouldBeInRange = true)
+    }
+
     @Test fun testBefore() {
         doTest(MyDate(2013, 3, 22), MyDate(2014, 1, 1), MyDate(2015, 1, 1), shouldBeInRange = false)
+    }
+
+    @Test fun testBefore1() {
+        doTest(MyDate(2013, 12, 31), MyDate(2014, 1, 1), MyDate(2015, 1, 1), shouldBeInRange = false)
     }
 
     @Test fun testAfter() {
         doTest(MyDate(2015, 3, 22), MyDate(2014, 1, 1), MyDate(2015, 1, 1), shouldBeInRange = false)
     }
-}
+
+    @Test fun testAfter1() {
+        doTest(MyDate(2015, 1, 2), MyDate(2014, 1, 1), MyDate(2015, 1, 1), shouldBeInRange = false)
+    }}
