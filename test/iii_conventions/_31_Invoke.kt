@@ -20,6 +20,7 @@ class _31_Invoke {
         testInvokable(0) { it }
     }
 
-    operator fun Invokable.invoke() = todoTask31()
-    fun Invokable.getNumberOfInvocations() = todoTask31()
 }
+
+operator fun Invokable.invoke(): Invokable { numberOfInvocations++; return this }
+fun Invokable.getNumberOfInvocations() = numberOfInvocations
